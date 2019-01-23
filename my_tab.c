@@ -11,12 +11,12 @@
 
 char **my_tab(int nb)
 {
-    char **tab = malloc(sizeof(char *) * nb + 1);
+    char **tab = malloc(sizeof(char *) * (nb + 1));
     int i = 0;
     int y = 0;
 
     while (i != nb) {
-        tab[i] = malloc(sizeof(char) * ((i * 2) + 1));
+        tab[i] = malloc(sizeof(char) * ((i * 2) + 2));
         while (y != (i * 2) + 1) {
             tab[i][y] = '|';
             y = y + 1;
@@ -70,5 +70,5 @@ void diplay_gametab(char **tab, int nb)
         my_putchar('*');
         i = i + 1;
     }
-    my_putchar('\n');
+    my_putstr("\n\n");
 }

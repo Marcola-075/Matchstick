@@ -29,7 +29,16 @@ char *inttochar(int nb);
 char *rm_it(char *line, int matches);
 int game(char **tab, char **av);
 int change_turn(int trun);
-char **take_arg(char **tab, char **av, int turn, int *exit);
+char **take_arg(char **tab, char **av, int *exit);
 int check_empty(char *buff);
+int my_random(int nb_max);
+int my_bigger_nbr(int nb_one, int nb_two);
+char **my_ia(char **tab, char **av);
+int count_line_difflen(char **tab, int len);
+int count_line_len(char **tab, int len);
+int count_line_betlen(char **tab, int min, int max);
+int takenbline(char **tab, int min, int max);
+int my_matches(char **tab, char **av, int line);
+int my_line(char **tab, char **av);
 
 #endif

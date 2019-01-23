@@ -85,6 +85,7 @@ char *rm_it(char *line, int matches)
     }
     return (line);
 }
+
 int game(char **tab, char **av)
 {
     int turn = 0;
@@ -92,25 +93,19 @@ int game(char **tab, char **av)
 
     while (check_end(tab) == 1 && exit != 1) {
         if (turn == 0) {
-            my_putstr("Your turn...\n");
-            tab = take_arg(tab, av, turn, &exit);
+            my_putstr("Your turn:\n");
+            tab = take_arg(tab, av, &exit);
         }
-        if (turn == 1)
+        if (turn == 1) {
             my_putstr("AI's turn...\n");
+            tab = my_ia(tab, av);
+        }
         if (exit != 1) {
             diplay_gametab(tab, my_getnbr(av[1]));
             turn = change_turn(turn);
         }
     }
-    if (exit == 0) {
-        if (turn == 0) {
-            my_putstr("I lost... snif... but I'll get you next time!!");
-            return (1);
-        }
-        if (turn == 1) {
-            my_putstr("You lost, too bad...");
-            return (2);
-        }
-    }
-    return (0);
+    if (exit == 1)
+        turn = 2;
+    return (turn);
 }

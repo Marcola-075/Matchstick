@@ -11,6 +11,8 @@ SRC	=	my_strlen.c		\
 		my_strcmp.c		\
 		my_putchar.c		\
 		my_getnbr.c		\
+		my_random.c		\
+		my_biggernbr.c		\
 		my_putstr.c
 
 OBJ	=	$(SRC:.c=.o)

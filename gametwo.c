@@ -16,12 +16,9 @@ int change_turn(int trun)
     return (trun);
 }
 
-void put_playact(int lines, int matches, int turn)
+void put_playact(int lines, int matches)
 {
-    if (turn == 0)
-        my_putstr("Player one");
-    else
-        my_putstr("AI");
+    my_putstr("Player");
     my_putstr(" removed ");
     my_putstr(inttochar(matches));
     my_putstr(" match(es) form line ");
@@ -29,7 +26,7 @@ void put_playact(int lines, int matches, int turn)
     my_putchar('\n');
 }
 
-char **take_arg(char **tab, char **av, int turn, int *exit)
+char **take_arg(char **tab, char **av, int *exit)
 {
     int line;
     int matches;
@@ -45,10 +42,32 @@ char **take_arg(char **tab, char **av, int turn, int *exit)
         return (tab);
     }
     if (matches == 1000)
-        tab = take_arg(tab, av, turn, exit);
+        tab = take_arg(tab, av, exit);
     else {
-        put_playact(line, matches, turn);
+        put_playact(line, matches);
         tab[line] = rm_it(tab[line], matches);
     }
+    return (tab);
+}
+
+void put_ia_playact(int lines, int matches)
+{
+    my_putstr("AI");
+    my_putstr(" removed ");
+    my_putstr(inttochar(matches));
+    my_putstr(" match(es) form line ");
+    my_putstr(inttochar(lines + 1));
+    my_putchar('\n');
+}
+
+char **my_ia(char **tab, char **av)
+{
+    int line;
+    int matches;
+
+    line = my_line(tab, av);
+    matches = my_matches(tab, av, line);
+    tab[line] = rm_it(tab[line], matches);
+    put_ia_playact(line, matches);
     return (tab);
 }

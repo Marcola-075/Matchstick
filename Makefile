@@ -11,6 +11,8 @@ SRC	=	my_tab.c	\
 		game.c		\
 		intochar.c	\
 		gametwo.c	\
+		line_two.c	\
+		ia.c		\
 		main.c
 
 OBJ	=	$(SRC:.c=.o)
