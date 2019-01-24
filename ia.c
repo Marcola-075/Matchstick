@@ -14,8 +14,9 @@ int my_line(char **tab, char **av)
 
     line = my_random(max);
     if (count_line_len(tab, 1) == 1
-        && count_line_betlen(tab, 1, my_getnbr(tab[2])) == 1)
+        && count_line_betlen(tab, 1, my_getnbr(av[2])) == 1) {
         line = takenbline(tab, 1, my_getnbr(tab[2]));
+    }
     else {
         while (line_nbpipe(line, tab) == 0)
             line = my_random(max);
