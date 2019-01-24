@@ -9,7 +9,7 @@
 
 int check_char(char c)
 {
-    char *nbr = "0123456789-\n";
+    char *nbr = "0123456789\n";
     int i = 0;
 
     while (nbr[i] != '\0') {
