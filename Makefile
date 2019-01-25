@@ -13,6 +13,7 @@ SRC	=	my_tab.c	\
 		gametwo.c	\
 		line_two.c	\
 		ia.c		\
+		my_getnbrold.c	\
 		main.c
 
 OBJ	=	$(SRC:.c=.o)

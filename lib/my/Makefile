@@ -13,6 +13,7 @@ SRC	=	my_strlen.c		\
 		my_getnbr.c		\
 		my_random.c		\
 		my_biggernbr.c		\
+		my_smaller_nbr.c	\
 		my_putstr.c
 
 OBJ	=	$(SRC:.c=.o)

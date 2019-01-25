@@ -40,5 +40,7 @@ int count_line_betlen(char **tab, int min, int max);
 int takenbline(char **tab, int min, int max);
 int my_matches(char **tab, char **av, int line);
 int my_line(char **tab, char **av);
+int my_smaller_nbr(int nb_one, int nb_two);
+int    my_getnbrold(char const *str);
 
 #endif

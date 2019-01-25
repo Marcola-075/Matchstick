@@ -23,7 +23,7 @@ int take_line(int nb)
         my_putstr("Error: invalid input (positive number expected)\n");
         res = take_line(nb) + 1;
     }
-    if (res <= 0 || res > nb) {
+    else if (res <= 0 || res > nb) {
         my_putstr("Error: this line is out of range\n");
         res = take_line(nb) + 1;
     }
