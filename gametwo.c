@@ -55,7 +55,7 @@ void put_ia_playact(int lines, int matches)
     my_putstr("AI");
     my_putstr(" removed ");
     my_putstr(inttochar(matches));
-    my_putstr(" match(es) form line ");
+    my_putstr(" match(es) from line ");
     my_putstr(inttochar(lines + 1));
     my_putchar('\n');
 }
