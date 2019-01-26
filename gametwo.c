@@ -21,7 +21,7 @@ void put_playact(int lines, int matches)
     my_putstr("Player");
     my_putstr(" removed ");
     my_putstr(inttochar(matches));
-    my_putstr(" match(es) form line ");
+    my_putstr(" match(es) from line ");
     my_putstr(inttochar(lines + 1));
     my_putchar('\n');
 }
